@@ -251,26 +251,37 @@ Target Variable:
 
 ---
 
-# 📸 Screenshots
+## 📸 Application Screenshots
 
-### Home Page
+### 🏠 Home Page
 
-> Add screenshot here
-
----
-
-### Prediction Page
-
-> Add screenshot here
+<p align="center">
+  <img src="Screenshots/Home.png" width="900">
+</p>
 
 ---
 
-### Prediction Result
+### ✨ Features Section
 
-> Add screenshot here
+<p align="center">
+  <img src="Screenshots/Features.png" width="900">
+</p>
 
 ---
 
+### 🤖 Models Evaluated
+
+<p align="center">
+  <img src="Screenshots/models.png" width="900">
+</p>
+
+---
+
+### 📝 Prediction Form
+
+<p align="center">
+  <img src="Screenshots/Form.png" width="900">
+</p>
 # 🔮 Future Improvements
 
 - User authentication
