@@ -1,4 +1,6 @@
+from dataclasses import dataclass
 import sys
+
 from dataclasses import dataclass
 import numpy as np
 from sklearn.preprocessing import StandardScaler
