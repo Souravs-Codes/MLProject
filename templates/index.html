@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance Predictor</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+        }
+
+        body{
+            background:linear-gradient(135deg,#0f172a,#111827,#1e293b);
+            color:white;
+            overflow-x:hidden;
+        }
+
+        nav{
+            width:100%;
+            padding:22px 9%;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            position:fixed;
+            top:0;
+            left:0;
+            background:rgba(15,23,42,.65);
+            backdrop-filter:blur(18px);
+            z-index:1000;
+        }
+
+        nav h2{
+            color:#38bdf8;
+            font-size:28px;
+        }
+
+        nav a{
+            text-decoration:none;
+            color:white;
+            margin-left:30px;
+            transition:.3s;
+        }
+
+        nav a:hover{
+            color:#38bdf8;
+        }
+
+        .hero{
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            padding:120px 9% 80px;
+            gap:60px;
+        }
+
+        .left{
+            flex:1;
+        }
+
+        .left h1{
+            font-size:58px;
+            line-height:1.2;
+        }
+
+        .left h1 span{
+            color:#38bdf8;
+        }
+
+        .left p{
+            margin:30px 0;
+            color:#cbd5e1;
+            line-height:1.8;
+            font-size:18px;
+        }
+
+        .btn{
+            display:inline-block;
+            padding:16px 38px;
+            background:#38bdf8;
+            color:#0f172a;
+            font-weight:600;
+            border-radius:50px;
+            text-decoration:none;
+            transition:.35s;
+            box-shadow:0 10px 30px rgba(56,189,248,.35);
+        }
+
+        .btn:hover{
+            transform:translateY(-5px);
+            background:white;
+        }
+
+        .right{
+            flex:1;
+            display:flex;
+            justify-content:center;
+        }
+
+        .glass{
+            width:420px;
+            background:rgba(255,255,255,.08);
+            backdrop-filter:blur(25px);
+            border:1px solid rgba(255,255,255,.12);
+            border-radius:25px;
+            padding:35px;
+            box-shadow:0 15px 40px rgba(0,0,0,.3);
+            animation:float 4s ease-in-out infinite;
+        }
+
+        @keyframes float{
+            50%{
+                transform:translateY(-15px);
+            }
+        }
+
+        .glass h2{
+            margin-bottom:20px;
+            color:#38bdf8;
+        }
+
+        .score{
+            display:flex;
+            justify-content:space-between;
+            margin:20px 0;
+            padding:15px;
+            background:rgba(255,255,255,.05);
+            border-radius:12px;
+        }
+
+        .features{
+            padding:80px 9%;
+        }
+
+        .section-title{
+            text-align:center;
+            font-size:40px;
+            margin-bottom:60px;
+        }
+
+        .cards{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+            gap:30px;
+        }
+
+        .card{
+            background:rgba(255,255,255,.05);
+            border:1px solid rgba(255,255,255,.08);
+            border-radius:20px;
+            padding:35px;
+            transition:.4s;
+        }
+
+        .card:hover{
+            transform:translateY(-10px);
+            border-color:#38bdf8;
+        }
+
+        .card h3{
+            margin:20px 0;
+            color:#38bdf8;
+        }
+
+        .models{
+            padding:80px 9%;
+            text-align:center;
+        }
+
+        .chips{
+            display:flex;
+            justify-content:center;
+            flex-wrap:wrap;
+            gap:15px;
+            margin-top:35px;
+        }
+
+        .chip{
+            padding:12px 24px;
+            border-radius:30px;
+            background:#1e293b;
+            border:1px solid rgba(255,255,255,.1);
+        }
+
+        footer{
+            margin-top:70px;
+            padding:35px;
+            text-align:center;
+            color:#94a3b8;
+            border-top:1px solid rgba(255,255,255,.08);
+        }
+
+        @media(max-width:900px){
+
+            .hero{
+                flex-direction:column;
+                text-align:center;
+            }
+
+            .left h1{
+                font-size:42px;
+            }
+
+            .glass{
+                width:100%;
+            }
+
+            nav{
+                flex-direction:column;
+                gap:15px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<nav>
+
+    <h2>EduPredict AI</h2>
+
+    <div>
+        <a href="#">Home</a>
+        <a href="#features">Features</a>
+        <a href="#models">Models</a>
+    </div>
+
+</nav>
+
+<section class="hero">
+
+    <div class="left">
+
+        <h1>
+            AI Powered <span>Student Performance</span> Prediction
+        </h1>
+
+        <p>
+
+            Predict a student's mathematics performance using an intelligent Machine Learning model trained on academic and demographic data. Fast, reliable and built using Flask & Scikit-Learn.
+
+        </p>
+
+        <a href="/predict" class="btn">
+            Start Prediction
+        </a>
+
+    </div>
+
+    <div class="right">
+
+        <div class="glass">
+
+            <h2>Model Performance</h2>
+
+            <div class="score">
+                <span>Accuracy</span>
+                <strong>88%</strong>
+            </div>
+
+            <div class="score">
+                <span>Best Model</span>
+                <strong>Ridge Regression</strong>
+            </div>
+
+            <div class="score">
+                <span>Prediction</span>
+                <strong>Real-Time</strong>
+            </div>
+
+            <div class="score">
+                <span>Framework</span>
+                <strong>Flask</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="features" id="features">
+
+<h2 class="section-title">Why Choose This Project?</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Machine Learning</h3>
+<p>
+Built using multiple regression algorithms and automatically selects the best performing model.
+</p>
+</div>
+
+<div class="card">
+<h3>Fast Prediction</h3>
+<p>
+Receive instant score predictions through an easy-to-use web interface powered by Flask.
+</p>
+</div>
+
+<div class="card">
+<h3>Data Driven</h3>
+<p>
+Predictions are generated from academic performance, parental education, lunch status and preparation data.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="models" id="models">
+
+<h2 class="section-title">Models Used</h2>
+
+<div class="chips">
+
+<div class="chip">Linear Regression</div>
+
+<div class="chip">Ridge Regression</div>
+
+<div class="chip">Random Forest</div>
+
+<div class="chip">Decision Tree</div>
+
+<div class="chip">XGBoost</div>
+
+<div class="chip">CatBoost</div>
+
+<div class="chip">AdaBoost</div>
+
+</div>
+
+</section>
+
+<footer>
+
+Designed & Developed by <strong>Sourav Mukherjee</strong><br><br>
+
+Student Performance Prediction using Machine Learning • Flask • Scikit-Learn
+
+</footer>
+
+</body>
+</html>
